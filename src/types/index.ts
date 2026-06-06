@@ -1,6 +1,6 @@
 export interface IOpinion {
-  nombre: string
-  estrellas: number
-  texto: string
+  name: string
+  stars: number
+  comentary: string
   createdAt: Date
 }

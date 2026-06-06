@@ -4,18 +4,18 @@ import { IOpinion } from '../types'
 export interface OpinionDocument extends IOpinion, Document {}
 
 const opinionSchema = new Schema<OpinionDocument>({
-  nombre: {
+  name: {
     type: String,
     required: true,
     maxlength: 50,
   },
-  estrellas: {
+  stars: {
     type: Number,
     required: true,
     min: 1,
     max: 5,
   },
-  texto: {
+  comentary: {
     type: String,
     required: true,
     maxlength: 500,
