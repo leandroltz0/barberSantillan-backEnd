@@ -7,7 +7,7 @@ const opinionSchema = new Schema<OpinionDocument>({
   name: {
     type: String,
     required: true,
-    maxlength: 50,
+    maxlength: 10,
   },
   stars: {
     type: Number,
@@ -18,7 +18,7 @@ const opinionSchema = new Schema<OpinionDocument>({
   comentary: {
     type: String,
     required: true,
-    maxlength: 500,
+    maxlength: 200,
   },
   createdAt: {
     type: Date,
