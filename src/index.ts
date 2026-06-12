@@ -8,7 +8,16 @@ import opinionesRouter from './routes/opiniones'
 
 const app: Application = express()
 
-app.use(cors({ origin: process.env.FRONTEND_URL }))
+app.use(cors({ 
+  origin: (origin, callback) => {
+    const allowed = process.env.FRONTEND_URL;
+    if (!origin || origin === allowed || origin.endsWith('.vercel.app')) {
+      callback(null, true);
+    } else {
+      callback(new Error('CORS no permitido'));
+    }
+  }
+}))
 app.use(express.json())
 
 app.use('/api/opiniones', opinionesRouter)
